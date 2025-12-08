@@ -1,0 +1,6 @@
+asgiref==3.11.0
+Django==6.0
+psycopg==3.3.2
+psycopg-binary==3.3.2
+python-decouple==3.8
+sqlparse==0.5.4
