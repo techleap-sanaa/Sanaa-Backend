@@ -3,4 +3,6 @@ Django==6.0
 psycopg==3.3.2
 psycopg-binary==3.3.2
 python-decouple==3.8
+python-dotenv==1.2.1
 sqlparse==0.5.4
+typing_extensions==4.15.0
