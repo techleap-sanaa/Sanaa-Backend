@@ -21,6 +21,8 @@ class User(models.Model):
     banned = models.BooleanField(default=False)
     profile_image = models.URLField(blank=False, null=False)
     two_factor_enabled = models.BooleanField(default=False)
+    verification_attempts_remaining = models.IntegerField(default=0)
+    first_time_user = models.BooleanField(default=True)
 
     def __str__(self):
         return self.primary_email
