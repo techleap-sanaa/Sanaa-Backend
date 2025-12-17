@@ -8,7 +8,7 @@ from .views import ClerkWebhook
 
 class ClerkWebhookTests(APITestCase):
     def setUp(self):
-        self.url = "/api/users"  # As defined in urls.py
+        self.url = "/webhooks/users"  # As defined in urls.py
         self.signing_secret = "test_secret"
         
         # Valid signature headers for mocking
