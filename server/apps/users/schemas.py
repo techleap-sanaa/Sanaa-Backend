@@ -1,7 +1,6 @@
 from typing import List, Optional, Union
 from pydantic import BaseModel, field_validator
-from datetime import datetime
-
+import datetime
 
 def to_iso(value):
     """
@@ -19,7 +18,7 @@ def to_iso(value):
     if value is None:
         return None
     if isinstance(value, int):
-        return datetime.utcfromtimestamp(value / 1000).isoformat()
+        return datetime.datetime.fromtimestamp(value/1000, datetime.timezone.utc).isoformat()
     return str(value)
 
 
@@ -45,6 +44,7 @@ class ClerkPhone(BaseModel):
     """
     id: str
     phone_number: str
+    
 
 
 class ClerkUser(BaseModel):
