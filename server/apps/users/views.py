@@ -9,7 +9,7 @@ from rest_framework import status
 from decouple import config
 from svix.webhooks import Webhook, WebhookVerificationError
 from .schemas import ClerkWebhookEvent
-from .models import User
+from .models import TenantUser
 
 
 logger = logging.getLogger(__name__)
@@ -123,7 +123,7 @@ class ClerkWebhook(APIView):
                 user.phone_numbers[0].phone_number
             )
 
-        obj, created = User.objects.update_or_create(
+        obj, created = TenantUser.objects.update_or_create(
             user_id=user.id,
             defaults={
                 "first_name": user.first_name or "",
@@ -154,5 +154,5 @@ class ClerkWebhook(APIView):
         Notes:
             - Operation is idempotent: deleting a non-existent user is safe.
         """
-        deleted, _ = User.objects.filter(user_id=user_id).delete()
+        deleted, _ = TenantUser.objects.filter(user_id=user_id).delete()
         return ok("User deleted")
