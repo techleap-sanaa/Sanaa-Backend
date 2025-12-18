@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = [config('FQDNS']
+ALLOWED_HOSTS = [config('FQDNS')]
 
 
 # Application definition
