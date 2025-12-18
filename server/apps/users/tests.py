@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
-from .models import User
+from .models import TenantUser as User 
 from .views import ClerkWebhook
 
 class ClerkWebhookTests(APITestCase):
