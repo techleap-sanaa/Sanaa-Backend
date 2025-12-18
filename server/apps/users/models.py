@@ -5,7 +5,7 @@ class AdminUser(AbstractUser):
     pass
 
 
-class User(models.Model):
+class TenantUser(models.Model):
     """Details of the general user"""
     user_id = models.CharField(max_length=255, primary_key=True)
     first_name = models.CharField(max_length=30, blank=False, null=False)
